@@ -1,0 +1,69 @@
+<Window x:Class="FluidKit.Showcase.DragDrop.CanvasExample.DragCanvasExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dragDrop="clr-namespace:FluidKit.Helpers.DragDrop;assembly=FluidKit"
+        xmlns:canvasExample="clr-namespace:FluidKit.Showcase.DragDrop.CanvasExample"
+        Title="DragCanvasExample - FluidKit"
+        Width="300"
+        Height="300">
+    <Window.Resources>
+        <canvasExample:CanvasDragDropAdvisor x:Key="advisor" />
+    </Window.Resources>
+    <Grid>
+        <Canvas Background="White"
+                dragDrop:DragDropManager.DragSourceAdvisor="{StaticResource advisor}"
+                dragDrop:DragDropManager.DropTargetAdvisor="{StaticResource advisor}">
+            <Button Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="50"
+                    Height="50"
+                    Content="Nothing" />
+
+            <Button Canvas.Left="200"
+                    Canvas.Top="0"
+                    Width="50"
+                    Height="50"
+                    Content="Nothing" />
+            <Rectangle Canvas.Left="200"
+                       Canvas.Top="100"
+                       Width="50"
+                       Height="50"
+                       Fill="Red" />
+            <Rectangle Canvas.Left="200"
+                       Canvas.Top="200"
+                       Width="50"
+                       Height="50"
+                       Fill="Green" />
+            <Rectangle Canvas.Left="200"
+                       Canvas.Top="300"
+                       Width="50"
+                       Height="50"
+                       Fill="Blue" />
+            <Rectangle Canvas.Left="200"
+                       Canvas.Top="400"
+                       Width="50"
+                       Height="50"
+                       Fill="Yellow" />
+
+            <ListBox Canvas.Left="300"
+                     Canvas.Top="50"
+                     Width="200">
+                <TextBlock>Hello</TextBlock>
+                <TextBlock>World!</TextBlock>
+                <TextBlock>How</TextBlock>
+                <TextBlock>Are</TextBlock>
+                <TextBlock>You</TextBlock>
+                <TextBlock>?</TextBlock>
+            </ListBox>
+
+            <Ellipse Canvas.Left="300"
+                     Canvas.Top="400"
+                     Width="75"
+                     Height="50"
+                     Fill="Yellow"
+                     Stroke="Black"
+                     StrokeThickness="1" />
+
+        </Canvas>
+    </Grid>
+</Window>
